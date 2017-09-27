@@ -5,17 +5,21 @@
  */
 package javadbconn;
 
+
+
 /**
  *
  * @author ravi
  */
-public class JavaDBConn {
+public class DBConnect {
 
     /**
      * @param args the command line arguments
+     * @throws java.lang.Exception
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) throws Exception {
+        MySQLAccess databaseAccessObject = new MySQLAccess();
+        databaseAccessObject.readDataBase();
     }
     
 }
