@@ -36,37 +36,9 @@ public class MySQLAccess {
             resultSet = statement
                     .executeQuery("select * from phone_iinfo.products");
             writeResultSet(resultSet);
-
-//            // PreparedStatements can use variables and are more efficient
-//            preparedStatement = connect
-//                    .prepareStatement("insert into  phone_iinfo.products values (?, ?, ?, ?)");
-//            // "myuser, webpage, datum, summary, COMMENTS from feedback.comments");
-//            // Parameters start with 1
-//            preparedStatement.setString(1, "");
-//            preparedStatement.setString(2, "Some phone name");
-//            preparedStatement.setString(3, "some price");
-//            preparedStatement.setString(4, "description of the product");
-//            preparedStatement.setString(5, String.valueOf(System.currentTimeMillis()));
-////            preparedStatement.setString(6, "product updated at");
-//            preparedStatement.executeUpdate();
-//            
-//            preparedStatement = connect
-//                    .prepareStatement("SELECT name, price, description from phone_iinfo.products");
-//            resultSet = preparedStatement.executeQuery();
-//            writeResultSet(resultSet);
-//
-//            // Remove again the insert comment
-//            preparedStatement = connect
-//            .prepareStatement("delete from phone_iinfo.products where pid= ? ; ");
-//            preparedStatement.setString(1, "Test"); //what is this?
-//            preparedStatement.executeUpdate();
-//
-//            resultSet = statement
-//            .executeQuery("select * from phone_iinfo.products");
-//            writeMetaData(resultSet);
-
         } catch (ClassNotFoundException | SQLException e) {
-            throw e;
+            //throw e;
+            System.out.println("Connection to datbase failed.");
         } finally {
             close();
         }
@@ -116,9 +88,8 @@ public class MySQLAccess {
                 connect.close();
             }
         } catch (Exception e) {
-
+               
         }
     }
-
     
 }
